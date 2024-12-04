@@ -1,0 +1,14 @@
+idx 페이지 : title 클릭 
+http://localhost8080/posts/6(detail.html)
+
+Detail 페이지 : edit클릭 -->
+http://localhost8080/posts/6/form/(form.html)
+
+
+Form 페이지 : Register 클릭 --> url 이 중요!
+http://localhost8080/posts/6/form
+
+수정하고 나면 디테일로 옴.
+
+Detail 페이지 :Delte 클릭 -->  원래 index에 대한 부분으로 이동 /posts (index.html)
+

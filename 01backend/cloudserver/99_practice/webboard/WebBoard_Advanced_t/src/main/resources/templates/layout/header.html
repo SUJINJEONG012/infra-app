@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<th:block th:fragment="headerLayout">
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a id="home" href="#" class="nav-link px-2 text-secondary">Post Project</a></li>
+        </ul>
+
+        <div class="text-end">
+          <span id="username" class="text-white me-2"
+          sec:authorize="isAuthenticated()"
+          sec:authentication="principal.username"
+          >
+          username</span>
+          <a th:href="@{/login}" 
+          role="button"
+          id="login" 
+          class="btn btn-outline-light me-2"
+          sec:authorize="!isAuthenticated()"
+          >
+          Login</a>
+         
+         
+          <a th:href="@{/logout}" 
+          sec:authorize="isAuthenticated()"
+          role="button" id="logout" 
+          class="btn btn-outline-light me-2"
+          >
+          Logout</a>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+  </header>
+</th:block>
+
+
+
+</body>
+</html>
